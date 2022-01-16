@@ -1,0 +1,30 @@
+html{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    background: azure;
+    z-index: 1;
+}
+.maincontainer{
+}
+
+#popup {
+
+}
+.hide {
+    display: none;
+}
+
+.show{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: 500px;
+    height: auto;
+    z-index: 9;
+    background: green;
+    padding: 20px;
+}
