@@ -12,11 +12,24 @@
     <div class="maincontainer">
         <div class="header">Menu here</div>
         <div class="libcontainer">program functionality here
-            <button id="addbtn" onclick="addBookToLib()">Add book</button>
-            <div id="popup" class="hide">
-                <input type="text">
-                <input type="text">
-                <input type="text">
+            <button id="addbtn">Add book</button>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <p>SOME TEXT HERE YO</p>
+                    <span class="close">&times;</span>
+                    <form class="form" onsubmit ="return false;">
+                        <input type="text" placeholder="Title" class="title">
+                        <input type="text" placeholder="Author" class="author">
+                        <input type="text" placeholder="Pages" class="pages">
+                        <div class="read">
+                            <label for="readbox">Check box if you have read it</label>
+                            <input type="checkbox" value="true" id="readbox">
+                        </div>
+                        
+                        <input type="text" placeholder="Book info" class="info">
+                        <button type="submit" onclick="addBookToLib()">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
         <div class="footcontainer">footer here</div>
