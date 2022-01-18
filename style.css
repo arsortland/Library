@@ -1,3 +1,8 @@
+.libcontainer{
+  display: flex;
+  flex-direction: column;
+}
+
 .modal {
   display: none;
   position: fixed; 
@@ -10,10 +15,13 @@
   background-color: rgba(0,0,0,0.4); 
 }
 
+.display{
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .modal-content {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: stretch;
   background-color: #fefefe;
@@ -25,4 +33,17 @@
 
 .close {
     display: none;
+}
+
+.bookitem{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 20px;
+  border-style: ridge;
+  width: 200px;
+  height: 200px;
+  padding: 30px;
+  background-color: beige;
 }

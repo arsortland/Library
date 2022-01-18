@@ -9,6 +9,7 @@ const author = document.querySelector('.author');
 const pages = document.querySelector('.pages');
 const readbox = document.querySelector('#readbox');
 const info = document.querySelector('.info');
+const display = document.querySelector('.display');
 
 btn.onclick = function() {
     modal.style.display = "block";
@@ -18,6 +19,17 @@ window.onclick = function (e) {
     if (e.target == modal){
         modal.style.display = "none";
     }
+}
+
+function resetAndClose(){
+    form.reset();
+    modal.style.display = "none";
+}
+
+function delBook(){
+    document.querySelectorAll('.deletebutton').forEach(delbtn => delbtn.addEventListener('click', () =>{
+        delbtn.parentElement.remove();
+    }));
 }
 
 
@@ -31,27 +43,45 @@ function Book(title, author, pages, read, info = ""){
     this.info = info;
 }
 
-const test = new Book('enTittel', 'enForfatter', 500, 'true', 'much wow')
-const test2 = new Book('annenTittel', 'annenForfatter', 999, 'false')
-
-
 function addBookToLib(){
+    if (title.value == ""){
+        //Find a valid error here that doesnt append and keep it for each empty click.
+        return;
+    }
     let aTitle = title.value;
     let anAuthor = author.value; 
     let totPages = pages.value;
     let haveRead = readbox.checked;
     let haveInfo = info.value;
     const newBook = new Book(aTitle, anAuthor, totPages, haveRead, haveInfo);
-    console.log(title.value);
-    console.log(author.value);
-    console.log(pages.value);
-    console.log(readbox.checked);
-    console.log(info.value);
-    myLib.push(test);
-    myLib.push(test2);
     myLib.push(newBook);
-    //reset form and close modal here or make a func that does. MAKE FUNC THAT DOES YOU!
+    resetAndClose();
+    displayBooks();
+}
+function displayBooks(){
+        const aBook = document.createElement('div');
+        const readbutton = document.createElement('button');
+        const deletebutton = document.createElement('button');
+        readbutton.textContent = 'Book read';
+        deletebutton.textContent = 'Delete book';
+        aBook.classList.add('bookitem');
+        readbutton.classList.add('readbutton');
+        deletebutton.classList.add('deletebutton');
+        aBook.innerHTML ='Title: '+ myLib[myLib.length -1].title + '<br>';
+        aBook.innerHTML +='Author: '+ myLib[myLib.length -1].author +'<br>';
+        aBook.innerHTML +='Pages: '+ myLib[myLib.length -1].pages + '<br>';
+        aBook.innerHTML +='Read: '+ myLib[myLib.length -1].read + '<br>';
+        aBook.innerHTML +='Info: '+ myLib[myLib.length -1].info;
+        aBook.appendChild(readbutton);
+        aBook.appendChild(deletebutton);
+        display.appendChild(aBook);
+        delBook();
 }
 
-// //write func that loops through arr of books and displays them on a table of kind.
-// //Add a new book button for making a new book obj.
+
+
+//Make readbutton a slide and change background depending on it.(change true/false);
+//mebe an eventlistener for queryselectorall and change readbox.checked on click.
+
+//Don't allow submit if field is empty.
+//CSS!
