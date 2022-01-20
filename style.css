@@ -1,3 +1,28 @@
+@font-face {
+  font-family: NotoSerif;
+  src: url(Noto_Serif/NotoSerif-Regular.ttf);
+}
+
+html, body{
+  font-family: NotoSerif;
+  background-color: rgb(223, 198, 172);
+  height: 100%;
+}
+
+.header{
+  text-align: center;
+  background-color: #4b4329;
+  width: 100%;
+}
+
+
+.maincontainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .libcontainer{
   display: flex;
   flex-direction: column;
@@ -18,17 +43,66 @@
 .display{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .modal-content {
   display: flex;
   justify-content: center;
-  align-items: stretch;
-  background-color: #fefefe;
+  align-items: center;
+  background-color: #6d623c;
   margin: 15% auto; 
-  padding: 20px;
   border: 1px solid #888;
-  width: 20%; 
+  width: 30%;
+  height: 30%; 
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+}
+input{
+  padding: 9px;
+  text-align: center;
+}
+
+.submit{
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: 0;
+  background-color: rgb(120, 117, 117);
+}
+.submit:hover{
+  background-color: wheat;
+  border: 4px;
+  border-color: black;
+}
+
+.libcontainer{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 86vh;
+}
+
+#addbtn{
+  font-size: 40px;
+  border-radius: 25px;
+  width: 50px;
+  margin: 2%;
+  background-color: #2664ff;
+  border: 0;
+
+}
+#addbtn:hover{
+  background-color: #1555f5;
+}
+
+#addbtn:active{
+  transform: translateY(3px);
+  box-shadow: 0,0, blue;
 }
 
 .close {
@@ -36,14 +110,48 @@
 }
 
 .bookitem{
+  margin-inline:5px;
+  margin-bottom: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  border: 20px;
+  align-items: flex-start;
+  border: 5px;
   border-style: ridge;
+  border-color: rgb(15, 48, 18);
   width: 200px;
   height: 200px;
   padding: 30px;
-  background-color: beige;
+  background-color: yellow;
+  overflow: auto;
+}
+
+.bookitem:hover{
+  border-color: rgb(250, 163, 0);
+}
+
+.deletebutton, .readbutton{
+  border-radius: 10px;
+  flex-direction: row;
+  width: 100%;
+  margin: 1px;
+  margin-top: 10px;
+  padding:7px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.footer {
+  text-align: center;
+  gap: 10px;
+  width: 100%;
+  background-color: #634d05;
+  font-size: 16px;
+}
+
+a{
+    color: inherit;
+    text-decoration:overline;
 }

@@ -10,31 +10,41 @@
 </head>
 <body>
     <div class="maincontainer">
-        <div class="header">Menu here</div>
-        <div class="libcontainer">program functionality here
-            <div class="display">
-                
-            </div>
-            <button id="addbtn">Add book</button>
+        <div class="header"><h1>Library</h1>
+            <p>No external saving. This is purely for educational reasons.</p>
+        </div>
+        <div class="libcontainer">
+            <button id="addbtn">+</button>
             <div id="myModal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <form class="form" onsubmit ="return false;">
-                        <input type="text" placeholder="Title" class="title">
-                        <input type="text" placeholder="Author" class="author">
-                        <input type="text" placeholder="Pages" class="pages">
+                        <input type="text" required placeholder="Title" class="title">
+                        <input type="text" required placeholder="Author" class="author">
+                        <input type="text" required placeholder="Pages" class="pages">
                         <div class="read">
                             <label for="readbox">Check box if you have read it</label>
                             <input type="checkbox" value="true" id="readbox">
                         </div>
                         
                         <input type="text" placeholder="Book info" class="info">
-                        <button type="submit" onclick="addBookToLib()">Submit</button>
+                        <button type="submit" class="submit" onclick="addBookToLib()">Submit</button>
                     </form>
                 </div>
             </div>
+            <div class="display">
+            </div>
         </div>
-        <div class="footcontainer">footer here</div>
+        <footer class="footer">
+            <p>
+                Copyright ©
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>
+            <a href="https://github.com/arsortland/Library">arsortland</a>
+            </p>
+        </footer>
     </div>
+
 </body>
 </html>

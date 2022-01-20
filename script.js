@@ -1,9 +1,7 @@
 const modal = document.querySelector('.modal');
 const btn = document.getElementById('addbtn')
 const closeIt = document.querySelector('.close');
-
 const form = document.querySelector('.form');
-
 const title = document.querySelector('.title');
 const author = document.querySelector('.author');
 const pages = document.querySelector('.pages');
@@ -32,6 +30,14 @@ function delBook(){
     }));
 }
 
+function checkIfRead(checkbox){
+    if (myLib[myLib.length -1].read){
+        checkbox.checked = true;
+        checkbox.classList.add('haveread');
+        checkbox.textContent = "Read";
+        checkbox.parentElement.style.backgroundColor = 'white';
+    }
+}
 
 const myLib = [];
 
@@ -44,8 +50,7 @@ function Book(title, author, pages, read, info = ""){
 }
 
 function addBookToLib(){
-    if (title.value == ""){
-        //Find a valid error here that doesnt append and keep it for each empty click.
+    if (title.value == "" || author.value == "" || pages.value == ""){
         return;
     }
     let aTitle = title.value;
@@ -58,30 +63,44 @@ function addBookToLib(){
     resetAndClose();
     displayBooks();
 }
+
 function displayBooks(){
         const aBook = document.createElement('div');
         const readbutton = document.createElement('button');
         const deletebutton = document.createElement('button');
-        readbutton.textContent = 'Book read';
-        deletebutton.textContent = 'Delete book';
+        
         aBook.classList.add('bookitem');
         readbutton.classList.add('readbutton');
+        readbutton.textContent = "Not read";
+        deletebutton.textContent = 'Delete book';
         deletebutton.classList.add('deletebutton');
-        aBook.innerHTML ='Title: '+ myLib[myLib.length -1].title + '<br>';
-        aBook.innerHTML +='Author: '+ myLib[myLib.length -1].author +'<br>';
-        aBook.innerHTML +='Pages: '+ myLib[myLib.length -1].pages + '<br>';
-        aBook.innerHTML +='Read: '+ myLib[myLib.length -1].read + '<br>';
-        aBook.innerHTML +='Info: '+ myLib[myLib.length -1].info;
-        aBook.appendChild(readbutton);
+        
+        let i = myLib.length -1;
+        aBook.innerHTML ='Title: '+ myLib[i].title + '<br>';
+        aBook.innerHTML +='Author: '+ myLib[i].author +'<br>';
+        aBook.innerHTML +='Pages: '+ myLib[i].pages + '<br>';
+        aBook.innerHTML +='Info: '+ myLib[i].info;
         aBook.appendChild(deletebutton);
+        aBook.appendChild(readbutton);
         display.appendChild(aBook);
-        delBook();
+        checkIfRead(readbutton);
+
+        readbutton.onclick = function () {
+            if (this.textContent === "Read"){
+                this.parentElement.style.backgroundColor = "yellow",
+                myLib[i].read = false,  ///////////////
+                console.log(myLib[i]),
+                this.textContent = "Not read";  
+                
+            }
+            else if (this.textContent === "Not read")
+                this.parentElement.style.backgroundColor = 'white',
+                myLib[i].read = true,   ////////////////
+                console.log(myLib[i]),
+                this.textContent = "Read",
+                this.classList.toggle('haveread');
+        };
+        delBook();            
 }
-
-
-
-//Make readbutton a slide and change background depending on it.(change true/false);
-//mebe an eventlistener for queryselectorall and change readbox.checked on click.
-
-//Don't allow submit if field is empty.
-//CSS!
+//display a message if input field is empty
+//toggle background color depending on book read or not!
