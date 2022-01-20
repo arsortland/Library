@@ -34,8 +34,8 @@ function checkIfRead(checkbox){
     if (myLib[myLib.length -1].read){
         checkbox.checked = true;
         checkbox.classList.add('haveread');
-        checkbox.textContent = "Read";
-        checkbox.parentElement.style.backgroundColor = 'white';
+        checkbox.textContent = "Book Read";
+        checkbox.parentElement.style.backgroundColor = 'rgb(26, 169, 66)';
     }
 }
 
@@ -71,7 +71,7 @@ function displayBooks(){
         
         aBook.classList.add('bookitem');
         readbutton.classList.add('readbutton');
-        readbutton.textContent = "Not read";
+        readbutton.textContent = "Not Read";
         deletebutton.textContent = 'Delete book';
         deletebutton.classList.add('deletebutton');
         
@@ -86,21 +86,16 @@ function displayBooks(){
         checkIfRead(readbutton);
 
         readbutton.onclick = function () {
-            if (this.textContent === "Read"){
-                this.parentElement.style.backgroundColor = "yellow",
-                myLib[i].read = false,  ///////////////
-                console.log(myLib[i]),
-                this.textContent = "Not read";  
-                
+            if (this.textContent === "Book Read"){
+                this.parentElement.style.backgroundColor = "rgb(196, 116, 19)",
+                myLib[i].read = false,
+                this.textContent = "Not Read";  
             }
-            else if (this.textContent === "Not read")
-                this.parentElement.style.backgroundColor = 'white',
-                myLib[i].read = true,   ////////////////
-                console.log(myLib[i]),
-                this.textContent = "Read",
+            else if (this.textContent === "Not Read")
+                this.parentElement.style.backgroundColor = 'rgb(26, 169, 66)',
+                myLib[i].read = true,
+                this.textContent = "Book Read",
                 this.classList.toggle('haveread');
         };
         delBook();            
 }
-//display a message if input field is empty
-//toggle background color depending on book read or not!

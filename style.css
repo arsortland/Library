@@ -122,12 +122,12 @@ input{
   width: 200px;
   height: 200px;
   padding: 30px;
-  background-color: yellow;
+  background-color: rgb(196, 116, 19);
   overflow: auto;
 }
 
 .bookitem:hover{
-  border-color: rgb(250, 163, 0);
+  border-color: rgb(219, 237, 19);
 }
 
 .deletebutton, .readbutton{
@@ -142,6 +142,7 @@ input{
   text-align: center;
   align-items: center;
 }
+
 
 .footer {
   text-align: center;
