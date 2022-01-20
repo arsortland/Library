@@ -11,7 +11,7 @@ html, body{
 
 .header{
   text-align: center;
-  background-color: #4b4329;
+  background-color: #837649;
   width: 100%;
 }
 
@@ -53,8 +53,8 @@ html, body{
   background-color: #6d623c;
   margin: 15% auto; 
   border: 1px solid #888;
-  width: 30%;
-  height: 30%; 
+  width: 35%;
+  height: 35%; 
 }
 
 .form{
@@ -64,6 +64,8 @@ html, body{
 input{
   padding: 9px;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .submit{
@@ -92,12 +94,12 @@ input{
   border-radius: 25px;
   width: 50px;
   margin: 2%;
-  background-color: #2664ff;
+  background-color: #6e83b6;
   border: 0;
 
 }
 #addbtn:hover{
-  background-color: #1555f5;
+  background-color: #537be1;
 }
 
 #addbtn:active{
@@ -127,7 +129,7 @@ input{
 }
 
 .bookitem:hover{
-  border-color: rgb(219, 237, 19);
+  border-color: rgb(255, 255, 255);
 }
 
 .deletebutton, .readbutton{
@@ -139,8 +141,6 @@ input{
   padding:7px;
   display: flex;
   justify-content: center;
-  text-align: center;
-  align-items: center;
 }
 
 
@@ -148,7 +148,7 @@ input{
   text-align: center;
   gap: 10px;
   width: 100%;
-  background-color: #634d05;
+  background-color: #837649;
   font-size: 16px;
 }
 

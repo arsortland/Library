@@ -6,3 +6,5 @@ I have learned how to make a modal.
 I have learned to import fonts.
 I have learned how to use objects with DOM.
 I have learned alot about objects in general.
+I have learned the meaning of "this"
+I have learned how to access values of objects in an array.

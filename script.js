@@ -35,7 +35,7 @@ function checkIfRead(checkbox){
         checkbox.checked = true;
         checkbox.classList.add('haveread');
         checkbox.textContent = "Book Read";
-        checkbox.parentElement.style.backgroundColor = 'rgb(26, 169, 66)';
+        checkbox.parentElement.style.backgroundColor = 'rgb(68, 177, 121)';
     }
 }
 
@@ -92,7 +92,7 @@ function displayBooks(){
                 this.textContent = "Not Read";  
             }
             else if (this.textContent === "Not Read")
-                this.parentElement.style.backgroundColor = 'rgb(26, 169, 66)',
+                this.parentElement.style.backgroundColor = 'rgb(68, 177, 121)',
                 myLib[i].read = true,
                 this.textContent = "Book Read",
                 this.classList.toggle('haveread');
