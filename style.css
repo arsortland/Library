@@ -5,13 +5,12 @@
 
 html, body{
   font-family: NotoSerif;
-  background-color: rgb(223, 198, 172);
   height: 100%;
 }
 
 .header{
   text-align: center;
-  background-color: #837649;
+  background-color: #9c8952;
   width: 100%;
 }
 
@@ -26,6 +25,8 @@ html, body{
 .libcontainer{
   display: flex;
   flex-direction: column;
+  background: url(books.png) no-repeat center center fixed;
+  background-size: cover;
 }
 
 .modal {
@@ -90,9 +91,9 @@ input{
 }
 
 #addbtn{
-  font-size: 40px;
-  border-radius: 25px;
-  width: 50px;
+  font-size: 50px;
+  border-radius: 35px;
+  width: 65px;
   margin: 1%;
   background-color: #6e83b6;
   border-style: solid;
@@ -102,6 +103,7 @@ input{
 #addbtn:hover{
   background-color: #537be1;
   border-color: white;
+  width: 66px;
 }
 
 #addbtn:active{
@@ -114,6 +116,7 @@ input{
 }
 
 .bookitem{
+  opacity: 0.96;
   margin-inline:5px;
   margin-bottom: 5px;
   display: flex;
@@ -159,7 +162,7 @@ input{
   text-align: center;
   gap: 10px;
   width: 100%;
-  background-color: #837649;
+  background-color: #9c8952;
   font-size: 16px;
 }
 
