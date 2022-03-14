@@ -43,24 +43,23 @@ function checkIfRead(checkbox) {
 
 const myLib = [];
 
-function Book(title, author, pages, read, info = "") {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.info = info;
+class Book {
+  constructor(title, author, pages, read, info) {
+    (this.title = title),
+      (this.author = author),
+      (this.pages = pages),
+      (this.read = read),
+      (this.info = info);
+  }
 }
-/*
-const Book = (title,author, pages, read ,info ="") => {
-    return {
-        title,
-        author,
-        pages,
-        read,
-        info,
-    }
-}
-*/
+
+// function Book(title, author, pages, read, info = "") {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.read = read;
+//   this.info = info;
+// }
 
 function addBookToLib() {
   if (title.value == "" || author.value == "" || pages.value == "") {
